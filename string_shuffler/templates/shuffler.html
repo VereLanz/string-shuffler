@@ -1,0 +1,24 @@
+<html>
+<head>
+    <title>Shuffler</title>
+    <link href="{{ url_for('static', path='/styles.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <h1>The Shuffler</h1>
+        <form method="post" action="/shuffler/go">
+            shuffle 
+            <input class="text" type="text" id="input" name="input" value="{{ input }}">
+             times 
+            <input class="text" type="text" id="amount" name="amount" value="{{ amount }}">
+            <br><br>
+            <input class="button" type="submit" value="Go">
+        </form>
+        <br><br>
+        <h1>Results</h1>
+        {%- for item in output -%}
+            {{ item }} <br><br>
+        {%- endfor -%}
+    </div>
+</body>
+</html>
